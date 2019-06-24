@@ -32,7 +32,7 @@ namespace Academy.Interface.RestApi.Controllers
         {
             return _Customers.FirstOrDefault(x => x.Id == id);
         }
-
+         
         [HttpPost]
         public void Post([FromBody] Customer customer)
         {
