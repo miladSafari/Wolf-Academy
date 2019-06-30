@@ -1,17 +1,23 @@
 ﻿using System;
 using Academy.Domain.Model;
+using Academy.Domain.Repository;
 
 namespace Academy.Application
 {
-    public class CourseCategoryService
+    public class CourseCategoryService: ICourseCategoryService
     {
+        private readonly ICourseCategoryRepository _repository;
+        public CourseCategoryService(ICourseCategoryRepository repository)
+        {
+            this._repository = repository;
+        }
         public void Create(string title)
         {
-            var courseCategory = new CourseCategory()
+            var courseCategory=new CourseCategory()
             {
                 Title = title
             };
-            //.... Save CourseCategory Into DataBase
+            _repository.Add(courseCategory);
         }
     }
-}
+} 
