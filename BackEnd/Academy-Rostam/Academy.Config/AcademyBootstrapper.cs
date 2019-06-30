@@ -10,8 +10,10 @@ namespace Academy.Config
     {
         public static void WireUp(IServiceCollection services)
         {
+            //TODO: SingleTone ?? O_o
             services.AddSingleton<ICourseCategoryService, CourseCategoryService>();
             services.AddSingleton<ICourseCategoryRepository, CourseCategoryRepository>();
+            services.AddSingleton<AcademyContext>();
         }
     }
 }
