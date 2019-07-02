@@ -1,4 +1,5 @@
 ﻿using System;
+using Academy.Application.Contract;
 using Academy.Domain.Model;
 using Academy.Domain.Repository;
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using Academy.Application;
+using Academy.Application.Contract;
 using Academy.Domain.Repository;
 using Academy.Persistence.EF;
 using Microsoft.Extensions.DependencyInjection;

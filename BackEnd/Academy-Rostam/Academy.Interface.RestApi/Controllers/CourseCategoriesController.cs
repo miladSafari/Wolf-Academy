@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Academy.Application;
+using Academy.Application.Contract;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Academy.Interface.RestApi.Controllers
@@ -17,9 +18,10 @@ namespace Academy.Interface.RestApi.Controllers
         {
             _service = service;
         }
-        public void Post()
+        public IActionResult Post()
         {
-            _service.Create("Web Developer"); 
+            _service.Create("Web Developer");
+            return Accepted();
         }
         
     }
