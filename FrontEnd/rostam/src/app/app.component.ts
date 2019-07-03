@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { getLocaleDateTimeFormat } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'rostam';
+  numbers:Array<string>;
+  constructor(){
+    this.numbers=new Array<string>();
+  }
+  addItem():void{
+    let random=Math.floor(Math.random() * 100) + 1;
+    this.numbers.push(random.toString());
+  }
 }
