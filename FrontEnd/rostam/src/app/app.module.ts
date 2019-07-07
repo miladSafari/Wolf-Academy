@@ -3,19 +3,25 @@ import { NgModule } from '@angular/core';
 import {AcademyModule} from './academy/academy.module';
 import { RouterModule } from '@angular/router';
 
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MenuBarComponent } from './menu-bar/menu-bar.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GridModule } from '@progress/kendo-angular-grid';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    RouterModule,
     AcademyModule,
-    RouterModule
+    BrowserAnimationsModule,
+    GridModule
   ],
   providers: [],
   bootstrap: [AppComponent]

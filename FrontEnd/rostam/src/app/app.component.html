@@ -1,24 +1,5 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <!-- <button (click)="addItem()">Add Item To List</button>
+<app-menu-bar></app-menu-bar>
 
-  <ul *ngFor="let value of numbers">
-    <li>
-        {{value}}
-    </li>
-  </ul> -->
-  <!-- <course-category-list></course-category-list> -->
-  <h3>Header</h3>
-  <ul>
-    <li>
-      
-    </li>
-    <li>
-        <a routerLink="/course-category" routerLinkActive="active">Define Course Category</a>
-    </li>
-  </ul>
-  <router-outlet>
-
-  </router-outlet>
-  <h3>footer</h3>
+<div class="content">
+        <router-outlet></router-outlet>
 </div>
