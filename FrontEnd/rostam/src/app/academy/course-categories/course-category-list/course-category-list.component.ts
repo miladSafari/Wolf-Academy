@@ -11,8 +11,7 @@ import { OK } from '../../dialog-response.enum';
     templateUrl: './course-category-list.component.html',
 })
 export class CourseCategoryListComponent implements OnInit {
-   
-    private courseCategories: Array<CourseCategory>;    
+    private courseCategories: Array<CourseCategory>;
     constructor(private service: CourseCategoryService,
                 private dialogService: DialogService) {
     }
@@ -35,30 +34,30 @@ export class CourseCategoryListComponent implements OnInit {
         return node.childCategories && node.childCategories.length > 0;
     }
 
-    public delete(item: CourseCategory):void {
-        this.service.delete(item.id).subscribe((a:any)=>{
+    public delete(item: CourseCategory): void {
+        this.service.delete(item.id).subscribe((a: any) => {
             this.loadCourseCategories();
         });
     }
 
-    public edit(item: CourseCategory):void {
-        alert("you clicked on item " + item.title);
+    public edit(item: CourseCategory): void {
+        alert('you clicked on item'  + item.title);
     }
 
-    public addRoot():void {
+    public addRoot(): void {
         const dialogRef = this.dialogService.open({
             title: 'Add Root Course Category',
             content: CourseCategoryComponent
         });
 
-        dialogRef.result.subscribe((result:any)=>{
-            if (result == OK){
+        dialogRef.result.subscribe((result: any) => {
+            if (result === OK) {
                 this.loadCourseCategories();
             }
         });
     }
 
-    public addChild(item: CourseCategory) : void {
+    public addChild(item: CourseCategory): void {
         alert(item.id);
     }
 }

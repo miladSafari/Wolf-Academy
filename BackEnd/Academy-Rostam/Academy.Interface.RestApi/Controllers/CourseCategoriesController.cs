@@ -22,14 +22,24 @@ namespace Academy.Interface.RestApi.Controllers
 
         public IActionResult Get()
         {
-            var data = new List<Course>
+            var data = new List<CourseCategory>
             {
-                new Course() {Id = 1, Title = "Web Programming"},
-                new Course() {Id = 2, Title = "Mobile Programming"},
-                new Course() {Id = 3, Title = "Desktop Programming"}
-            };
+                new CourseCategory() {Id = 1, Title = "Web Programming",ChildCategories = new List<CourseCategory>()
+                {
+                    new CourseCategory(){Id = 10,Title = "ASP.NET Core"}
+                }},
+                new CourseCategory() {Id = 2, Title = "Mobile Programming",ChildCategories = new List<CourseCategory>()
+                {
+                    new CourseCategory(){Id = 20,Title = "IOS"}
+                }},
+                new CourseCategory() {Id = 3, Title = "Desktop Programming",ChildCategories = new List<CourseCategory>()
+                    {
+                        new CourseCategory(){Id = 21,Title = "C#"}
+
+                    }
+                }};
             return Ok(data);
         }
-        
+
     }
 }
