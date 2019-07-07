@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Academy.Application;
 using Academy.Application.Contract;
+using Academy.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Academy.Interface.RestApi.Controllers
@@ -18,10 +19,16 @@ namespace Academy.Interface.RestApi.Controllers
         {
             _service = service;
         }
-        public IActionResult Post()
+
+        public IActionResult Get()
         {
-            _service.Create("Web Developer");
-            return Accepted();
+            var data = new List<Course>
+            {
+                new Course() {Id = 1, Title = "Web Programming"},
+                new Course() {Id = 2, Title = "Mobile Programming"},
+                new Course() {Id = 3, Title = "Desktop Programming"}
+            };
+            return Ok(data);
         }
         
     }

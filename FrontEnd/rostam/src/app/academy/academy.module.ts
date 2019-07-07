@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { CourseCategoryListComponent } from './course-categories/course-category-list/course-category-list.component';
 import { CourseCategoryComponent } from './course-categories/course-category/course-category.component';
 import { RouterModule, Routes } from '@angular/router';
-
+import {CourseCategoryService} from './course-categories/shared/course-category.service';
+import {HttpClientModule} from '@angular/common/http';
 // import { FormsModule } from '@angular/forms';
 // import { HttpClientModule } from '@angular/common/http';
 
@@ -17,9 +18,10 @@ const appRoutes: Routes = [
 // @NgModule decorator with its metadata
 @NgModule({
     imports:       [ BrowserModule ,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
     ],
-    providers:     [  ],
+    providers:     [ CourseCategoryService ],
     declarations:  [
         CourseCategoryListComponent,
         CourseCategoryComponent
